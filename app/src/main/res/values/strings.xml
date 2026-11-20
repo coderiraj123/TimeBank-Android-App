@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">TimeBank</string>
+    <string name="app_name" translatable="false">TimeBank</string>
+    <string name="login_subtitle" translatable="false">Login to continue your learning journey with smile</string>
+    <string name="email_address">Email_Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup_prompt">Don\'t have an account? Sign Up</string>
 </resources>
