@@ -1,5 +1,6 @@
 package com.timebank.app;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -54,8 +55,10 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(this,
                         "Searching for: " + skills,
                         Toast.LENGTH_LONG).show();
+                Intent intent =new Intent(this, SearchResultsActivity.class);
+                intent.putExtra("Skill_name",skills);
+                startActivity(intent);
             }
-            Toast.makeText(this,"Search SkillsSearch Skills",Toast.LENGTH_LONG).show();
         });
         HN=findViewById(R.id.HomeName);
         SharedPreferences prefer=getSharedPreferences("Userdata",MODE_PRIVATE);
