@@ -13,15 +13,17 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <ImageView
+        <TextView
             android:id="@+id/backh"
-            android:layout_width="72dp"
-            android:layout_height="38dp"
-            android:layout_gravity="start"
-            android:backgroundTintMode="src_over"
-            android:hapticFeedbackEnabled="true"
-            android:textAlignment="viewStart"
-            app:srcCompat="@drawable/baseline_arrow_back_24" />
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:background="#2562E9"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:text="← Back"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="match_parent"

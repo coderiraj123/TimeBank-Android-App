@@ -7,9 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.SharedPreferences;
-import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -17,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class HomeActivity extends AppCompatActivity {
-    Button btns,btnw,btnr,btnsearchskills;
+    Button btns,btnw,btnr,btnsearchskills,btnmys;
     TextView HN;
     EditText searchs;
 
@@ -35,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         btns=findViewById(R.id.btnaddskills);
         btnw=findViewById(R.id.btnwallet);
         btnr=findViewById(R.id.btnrequest);
+        btnmys=findViewById(R.id.btnMySkills);
         btnsearchskills=findViewById(R.id.btnSearchSkill);
         searchs=findViewById(R.id.etSearchSkill);
         btns.setOnClickListener(view -> {
@@ -66,6 +64,11 @@ public class HomeActivity extends AppCompatActivity {
         SharedPreferences prefer=getSharedPreferences("Userdata",MODE_PRIVATE);
         String Name= prefer.getString("name","student");
         HN.setText("Hello "+ Name+ " !");
+        btnmys.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this,
+                    MySkillsActivity.class);
+            startActivity(intent);
+        });
 
     }
 }

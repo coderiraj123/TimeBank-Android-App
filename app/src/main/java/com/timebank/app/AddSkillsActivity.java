@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +22,8 @@ public class AddSkillsActivity extends AppCompatActivity {
     EditText SkillName, SkillDescription, AvailableTime;
     Spinner Experience;
     Button btnAddSkill;
-View back;
+    TextView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +36,11 @@ View back;
         AvailableTime = findViewById(R.id.etAvailableTime);
         Experience = findViewById(R.id.spExperience);
         btnAddSkill = findViewById(R.id.btnAddSkill);
+        back = findViewById(R.id.backh);
 
         // Spinner options
         String[] levels = {
-                "Select Experience level",
+                "Select Experience ",
                 "Beginner",
                 "Intermediate",
                 "Expert"
@@ -55,8 +58,14 @@ View back;
 
         Experience.setAdapter(adapter);
 
-        btnAddSkill.setOnClickListener(v -> saveSkill());
+        btnAddSkill.setOnClickListener(v -> saveSkill()
+        );
+        back.setOnClickListener(view -> {
+            finish();
+        });
+
     }
+
 
     private void saveSkill() {
 
@@ -118,10 +127,7 @@ View back;
             Toast.makeText(this, "Unable to save skill",
                     Toast.LENGTH_SHORT).show();
         }
-        back=findViewById(R.id.backh);
-        back.setOnClickListener(view -> {
-            Intent i=new Intent(this, HomeActivity.class);
-            startActivity(i);
-        });
+
     }
+
 }
