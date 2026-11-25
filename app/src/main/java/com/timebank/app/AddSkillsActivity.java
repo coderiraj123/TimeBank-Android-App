@@ -37,7 +37,7 @@ View back;
 
         // Spinner options
         String[] levels = {
-                "Select Experience",
+                "Select Experience level",
                 "Beginner",
                 "Intermediate",
                 "Expert"
