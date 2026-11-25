@@ -39,6 +39,8 @@ public class HomeActivity extends AppCompatActivity {
         searchs=findViewById(R.id.etSearchSkill);
         btns.setOnClickListener(view -> {
             Toast.makeText(this,"Add Skills in Data",Toast.LENGTH_LONG).show();
+            Intent intent =new Intent(this, AddSkillsActivity.class);
+            startActivity(intent);
         });
         btnw.setOnClickListener(view -> {
             Toast.makeText(this,"Time Wallet",Toast.LENGTH_LONG).show();
